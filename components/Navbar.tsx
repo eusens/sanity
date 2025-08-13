@@ -13,8 +13,16 @@ const Navbar = async () => {
         <Link href="/">
           <Image src="/logo.png" alt="logo" width={144} height={30} />
         </Link>
+        
 
         <div className="flex items-center gap-5 text-black">
+          {/* About Us and Contact Us Links */}
+          <Link href="/about">
+            <span className="text-sm">About Us</span>
+          </Link>
+          <Link href="/contact">
+            <span className="text-sm">Contact Us</span>
+          </Link>
           {session && session?.user ? (
             <>
               <Link href="/products/create">
