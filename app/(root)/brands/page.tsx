@@ -5,47 +5,47 @@ const manufacturers = [
   {
     name: "Omron",
     image: "/omron.jpeg",
-    description: "Specializes in automation components, sensors, and PLCs.",
+    description: "Specializes in Industrial automation components, sensors, and PLCs.",
   },
   {
     name: "Mitsubishi Electric",
     image: "/mitsubishi.jpeg",
-    description: "Global leader in factory automation and drive systems.",
+    description: "Global leader in factory automation components and drive systems.",
   },
   {
     name: "Fuji Electric",
     image: "/fuji.jpeg",
-    description: "Provides inverters, HMI, and industrial control solutions.",
+    description: "Supply inverters, HMI, and industrial control solutions.",
   },
   {
     name: "Proface HMI",
     image: "/proface.jpg",
-    description: "Renowned for high-quality human-machine interfaces.",
+    description: "Main provide high-quality human-machine interfaces.",
   },
   {
     name: "Siemens",
     image: "/siemens.jpeg",
-    description: "Innovative industrial automation and control products.",
+    description: "Global Player of Innovative industrial automation and control products.",
   },
   {
     name: "ABB",
     image: "/abb.jpeg",
-    description: "Offers robotics, automation, and electrical products.",
+    description: "Provide robotics, automation, and electrical products.",
   },
   {
     name: "Schneider Electric",
     image: "/schneider.jpeg",
-    description: "Specializes in energy management and automation.",
+    description: "Main in the business of  energy management and automation.",
   },
   {
     name: "Rockwell Automation",
     image: "/rockwell.jpeg",
-    description: "Leader in industrial automation and digital transformation.",
+    description: "Provide industrial automation and digital transformation components.",
   },
   {
     name: "Panasonic",
     image: "/panasonic.jpeg",
-    description: "Provides automation, sensors, and industrial components.",
+    description: "Provides factory automation components, sensors, and industrial components.",
   },
 ];
 
