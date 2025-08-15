@@ -47,51 +47,74 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
   )}
         <p className="sub-heading !max-w-5xl">{post.description}</p>
       </section>
-
+      
       <section className="section_container">
-        <Image
-          src={post.image}
-          alt="thumbnail"
-          width={100}      // ⬅️ match the image size or use appropriate dimensions
-          height={50}
-          className="w-full h-auto rounded-xl"
-        />
+  {/* Two-column layout for desktop */}
+  <div className="flex flex-col md:flex-row gap-8 items-start">
+    {/* Left: Image */}
+    <div className="w-full md:w-1/2">
+      <Image
+        src={post.image}
+        alt="thumbnail"
+        width={100}
+        height={50}
+        className="w-full h-auto rounded-xl object-cover"
+      />
+    </div>
 
-        <div className="space-y-5 mt-10 max-w-4xl mx-auto">
-          <div className="flex-between gap-5">
-            <Link
-              href={`/user/${post.author?._id}`}
-              className="flex gap-2 items-center mb-3"
-            >
-              <Image
-                src={post.author.image}
-                alt="avatar"
-                width={64}
-                height={64}
-                className="rounded-full drop-shadow-lg"
-              />
+    {/* Right: Post info + Author + Category */}
+<div className="w-full md:w-1/2 space-y-5">
 
-              <div>
-                <p className="text-20-medium">{post.author.name}</p>
-                <p className="text-16-medium !text-black-300">
-                  @{post.author.username}
-                </p>
-              </div>
-            </Link>
+{/* Post meta info */}
+<p className="tag">{formatDate(post?._createdAt)}</p>
+<h6 className="category-tag">Item Number:{post.title}</h6>
+<p className="category-tag">Category: {post.category}</p>
 
-            <p className="category-tag">{post.category}</p>
-          </div>
+{post?.price !== undefined && post?.price !== null && (
+  <p className="text-lg font-semibold text-black-700">
+    Price: ${post.price.toFixed(2)} USD
+  </p>
+)}
 
-          <h3 className="text-30-bold">Pitch Details</h3>
-          {parsedContent ? (
-            <article
-              className="prose max-w-4xl font-work-sans break-all"
-              dangerouslySetInnerHTML={{ __html: parsedContent }}
-            />
-          ) : (
-            <p className="no-result">No details provided</p>
-          )}
-        </div>
+<p >{post.description}</p>
+
+{/* Author info */}
+<div className="flex-between gap-5">
+  <Link
+    href={`/user/${post.author?._id}`}
+    className="flex gap-2 items-center mb-3"
+  >
+    <Image
+      src={post.author.image}
+      alt="avatar"
+      width={64}
+      height={64}
+      className="rounded-full drop-shadow-lg"
+    />
+    <div>
+      <p className="text-20-medium">{post.author.name}</p>
+      <p className="text-16-medium !text-black-300">
+        @{post.author.username}
+      </p>
+    </div>
+  </Link>
+</div>
+</div>
+</div>
+
+
+          {/* Pitch Details - Full width */}
+  <div className="mt-10">
+    <h3 className="text-30-bold">Pitch Details</h3>
+    {parsedContent ? (
+      <article
+        className="prose max-w-4xl font-work-sans break-all"
+        dangerouslySetInnerHTML={{ __html: parsedContent }}
+      />
+    ) : (
+      <p className="no-result">No details provided</p>
+    )}
+  </div>
 
         {/* <hr className="divider" />
 

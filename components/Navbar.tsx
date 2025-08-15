@@ -20,6 +20,12 @@ const Navbar = async () => {
           <Link href="/about">
             <span className="text-sm">About Us</span>
           </Link>
+          <Link href="/">
+            <span className="text-sm">Products</span>
+          </Link>
+          <Link href="/brands">
+            <span className="text-sm">Brands</span>
+          </Link>
           <Link href="/contact">
             <span className="text-sm">Contact Us</span>
           </Link>
