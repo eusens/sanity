@@ -22,13 +22,15 @@ export default async function Home({
     <>
       <section className="pink_container">
         <h1 className="heading">
-          Pitch Your Startup, <br />
-          Connect With Entrepreneurs
+          Newsino Energy Company 
         </h1>
+        <p className="text-lg font-medium mt-2 text-center max-w-3xl mx-auto">
+           We provide high-tech tools, equipment and spare parts to companies in the
+           power generation, oil, petrochemical, Marine Industries and other fields.
+         </p>
 
         <p className="sub-heading !max-w-3xl">
-          Submit Ideas, Vote on Pitches, and Get Noticed in Virtual
-          Competitions.
+          Submit Brands, RFQs, Or Items Number Directly
         </p>
 
         <SearchForm query={query} />

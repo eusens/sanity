@@ -8,6 +8,7 @@ import { notFound } from "next/navigation";
 import { formatDate } from "@/lib/utils";
 import Link from "next/link";
 import Image from "next/image";
+import { Truck, Award, Wallet, Globe } from "lucide-react";
 
 import markdownit from "markdown-it";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -36,17 +37,58 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
 
   return (
     <>
-      <section className="pink_container !min-h-[230px]">
-        <p className="tag">{formatDate(post?._createdAt)}</p>
+      <section className="relative min-h-[300px] flex flex-col items-center justify-center text-center text-white px-6 py-12"
+  style={{
+    backgroundImage: "url('/banner-bg.webp')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+  }}>
+      {/* Tagline */}
+      <div className="text-center mb-10">
+        <div className="flex items-center justify-center gap-3 text-xl font-semibold text-white-800">
+          <Globe className="w-7 h-7 text-600" />
+          <span>Distributor of Industrial Automation Parts</span>
+        </div>
+        <p className="mt-2 text-orange-600 text-lg">
+          One Stop Sourcing and Supply
+        </p>
+      </div>
 
-        <h1 className="heading">{post.title}</h1>
-        {post?.price !== undefined && post?.price !== null && (
-    <p className="text-lg font-semibold text-green-700">
-      ${post.price.toFixed(2)} USD
-    </p>
-  )}
-        <p className="sub-heading !max-w-5xl">{post.description}</p>
-      </section>
+      {/* Features Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+        {/* Fast Delivery */}
+        <div className="flex flex-col items-center">
+          <Truck className="w-10 h-10 text-600 mb-3" />
+          <p className="font-semibold text-white-800">
+            Fast delivery, reliable combined shipping
+          </p>
+        </div>
+
+        {/* Experience */}
+        <div className="flex flex-col items-center">
+          <Award className="w-10 h-10 text-600 mb-3" />
+          <p className="font-semibold text-800">
+            20 years of experience <br /> Leading industry innovation
+          </p>
+        </div>
+
+        {/* Payment */}
+        <div className="flex flex-col items-center">
+          <Wallet className="w-10 h-10 text-600 mb-3" />
+          <p className="font-semibold text-800">
+            Flexible Payment <br /> Pay in 20+ local currencies
+          </p>
+        </div>
+
+        {/* Worldwide Shipping */}
+        <div className="flex flex-col items-center">
+          <Globe className="w-10 h-10 text-600 mb-3" />
+          <p className="font-semibold text-800">
+            Ship worldwide via DHL, FedEx, UPS & more
+          </p>
+        </div>
+      </div>
+    </section>
       
       <section className="section_container">
   {/* Two-column layout for desktop */}
@@ -105,7 +147,7 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
 
           {/* Pitch Details - Full width */}
   <div className="mt-10">
-    <h3 className="text-30-bold">Pitch Details</h3>
+    <h3 className="text-30-bold">Details</h3>
     {parsedContent ? (
       <article
         className="prose max-w-4xl font-work-sans break-all"
