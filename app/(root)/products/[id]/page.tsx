@@ -97,7 +97,7 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
     <div className="w-full md:w-1/2">
       <Image
         src={post.image}
-        alt="thumbnail"
+        alt={`${post.title} - ${post.category}`}
         width={100}
         height={50}
         className="w-full h-auto rounded-xl object-cover"
@@ -114,7 +114,9 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
 
 {post?.price !== undefined && post?.price !== null && (
   <p className="text-lg font-semibold text-black-700">
-    Price: ${post.price.toFixed(2)} USD
+    Price: ${post.price.toFixed(2)} USD 
+    {" / "}
+    €{(post.price * 0.91).toFixed(2)} EUR
   </p>
 )}
 
