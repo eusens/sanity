@@ -56,8 +56,8 @@ const workSans = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "YC Directory",
-  description: "Pitch, Vote and Grow",
+  title: "Newsino Energy Company",
+  description: "Industrial Automation Components Supplier",
 };
 
 export default function RootLayout({
