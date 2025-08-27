@@ -8,7 +8,7 @@ export default function Footer() {
         
         {/* Left: Company Info */}
         <div className="text-center md:text-left">
-          <p className="text-lg font-semibold">Newsino Energy</p>
+          <p className="text-lg font-semibold">Newsino Energy Co</p>
           <p className="text-sm">© {new Date().getFullYear()} Newsinoenergy. All rights reserved.</p>
         </div>
 
