@@ -1,8 +1,23 @@
 import { defineQuery } from "next-sanity";
 
 export const STARTUPS_QUERY =
-  defineQuery(`*[_type == "startup" && defined(slug.current) && !defined($search) || title match $search || category match $search || author->name match $search] | order(_createdAt desc)
-    [$offset...$limit] {
+  defineQuery(`*[
+    _type == "startup" && 
+    defined(slug.current) && 
+   (
+    !defined($search) || 
+    title match $search || 
+    category match $search ||
+     author->name match $search
+  )
+    //  &&
+    // (
+    //   !defined($category) || category == $category
+    // )
+     ] 
+    | order(_createdAt desc)
+    [$offset...$limit] 
+    {
   _id, 
   title, 
   slug,
@@ -102,3 +117,18 @@ export const PLAYLIST_BY_SLUG_QUERY =
     pitch
   }
 }`);
+export const RELATED_STARTUPS_QUERY = defineQuery(`
+  *[_type == "startup" && category == $category && _id != $id] 
+  | order(_createdAt desc) [0...4] {
+    _id,
+    title,
+    slug,
+    image,
+    category,
+    description,
+    author -> {
+      _id, name, image
+    }
+  }
+`);
+

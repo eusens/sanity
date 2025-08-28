@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { client } from "@/sanity/lib/client";
 import {
   PLAYLIST_BY_SLUG_QUERY,
+  RELATED_STARTUPS_QUERY,
   STARTUP_BY_ID_QUERY,
 } from "@/sanity/lib/queries";
 import { notFound } from "next/navigation";
@@ -31,6 +32,12 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
   const post = await client.fetch(STARTUP_BY_ID_QUERY, { id });
 
   if (!post) return notFound();
+
+  // Fetch related items
+const relatedPosts = await client.fetch(RELATED_STARTUPS_QUERY, { 
+  category: post.category,
+  id: post._id,
+});
   
 
   const parsedContent = md.render(post?.pitch || "");
@@ -187,6 +194,16 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
         ) : (
          <p className="text-center text-muted">No editor picks available.</p>
         )} */}
+        {relatedPosts?.length > 0 && (
+  <div className="mt-16">
+    <h3 className="text-30-semibold mb-6">Related Items</h3>
+    <ul className="card_grid-sm">
+      {relatedPosts.map((related: StartupTypeCard) => (
+        <StartupCard key={related._id} post={related} />
+      ))}
+    </ul>
+  </div>
+)}
 
 
         <Suspense fallback={<Skeleton className="view_skeleton" />}>
