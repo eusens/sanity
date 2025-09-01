@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Phone, Mail, MapPin, MessageCircle, MessageSquare } from "lucide-react";
 
 export default function ContactPage() {
   const features = [
@@ -42,6 +43,7 @@ export default function ContactPage() {
       <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mb-10">
   {/* Call */}
   <div className="bg-gray-100 p-6 rounded-lg text-center shadow">
+    <Phone className="w-8 h-8 mx-auto mb-3 text-blue-600" />
     <h2 className="font-semibold text-lg mb-2">Call Us</h2>
     <p className="text-gray-700">+86 137 6081 2861</p>
     <p className="text-gray-700">Mon - Fri, 9am - 6pm</p>
@@ -49,6 +51,7 @@ export default function ContactPage() {
 
   {/* Email */}
   <div className="bg-gray-100 p-6 rounded-lg text-center shadow">
+    <Mail className="w-8 h-8 mx-auto mb-3 text-blue-600" />
     <h2 className="font-semibold text-lg mb-2">Email Us</h2>
     <p className="text-gray-700">sales@newsinoenergy.com</p>
     {/* <p className="text-gray-700">support@newsinoenergy.com</p> */}
@@ -56,6 +59,7 @@ export default function ContactPage() {
 
   {/* Visit */}
   <div className="bg-gray-100 p-6 rounded-lg text-center shadow">
+    <MapPin className="w-8 h-8 mx-auto mb-3 text-blue-600" />
     <h2 className="font-semibold text-lg mb-2">Visit Us</h2>
     <p className="text-gray-700">2304,building 4,93# XingHai Rd</p>
     <p className="text-gray-700">Guangzhou, China</p>
@@ -63,6 +67,7 @@ export default function ContactPage() {
 
   {/* 🟢 WhatsApp */}
   <div className="bg-gray-100 p-6 rounded-lg text-center shadow">
+    <MessageCircle className="w-8 h-8 mx-auto mb-3 text-green-600" />
     <h2 className="font-semibold text-lg mb-2">WhatsApp</h2>
     <a
       href="https://wa.me/8613760812861" 
@@ -77,6 +82,7 @@ export default function ContactPage() {
 
   {/* 🟢 WeChat */}
   <div className="bg-gray-100 p-6 rounded-lg text-center shadow">
+    <MessageSquare className="w-8 h-8 mx-auto mb-3 text-green-600" />
     <h2 className="font-semibold text-lg mb-2">WeChat</h2>
     {/* <p className="text-gray-700 mb-2">Scan to add</p> */}
     <Image
