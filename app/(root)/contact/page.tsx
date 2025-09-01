@@ -39,23 +39,57 @@ export default function ContactPage() {
       </p>
 
       {/* Contact Info Boxes */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-        <div className="bg-gray-100 p-6 rounded-lg text-center shadow">
-          <h2 className="font-semibold text-lg mb-2">Call Us</h2>
-          <p className="text-gray-700">+86 4 123 4567</p>
-          <p className="text-gray-700">Mon - Fri, 9am - 6pm</p>
-        </div>
-        <div className="bg-gray-100 p-6 rounded-lg text-center shadow">
-          <h2 className="font-semibold text-lg mb-2">Email Us</h2>
-          <p className="text-gray-700">info@xx.com</p>
-          <p className="text-gray-700">support@xx.com</p>
-        </div>
-        <div className="bg-gray-100 p-6 rounded-lg text-center shadow">
-          <h2 className="font-semibold text-lg mb-2">Visit Us</h2>
-          <p className="text-gray-700">Office 123, Business Bay</p>
-          <p className="text-gray-700">Guangzhou, China</p>
-        </div>
-      </div>
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mb-10">
+  {/* Call */}
+  <div className="bg-gray-100 p-6 rounded-lg text-center shadow">
+    <h2 className="font-semibold text-lg mb-2">Call Us</h2>
+    <p className="text-gray-700">+86 137 6081 2861</p>
+    <p className="text-gray-700">Mon - Fri, 9am - 6pm</p>
+  </div>
+
+  {/* Email */}
+  <div className="bg-gray-100 p-6 rounded-lg text-center shadow">
+    <h2 className="font-semibold text-lg mb-2">Email Us</h2>
+    <p className="text-gray-700">sales@newsinoenergy.com</p>
+    {/* <p className="text-gray-700">support@newsinoenergy.com</p> */}
+  </div>
+
+  {/* Visit */}
+  <div className="bg-gray-100 p-6 rounded-lg text-center shadow">
+    <h2 className="font-semibold text-lg mb-2">Visit Us</h2>
+    <p className="text-gray-700">2304,building 4,93# XingHai Rd</p>
+    <p className="text-gray-700">Guangzhou, China</p>
+  </div>
+
+  {/* 🟢 WhatsApp */}
+  <div className="bg-gray-100 p-6 rounded-lg text-center shadow">
+    <h2 className="font-semibold text-lg mb-2">WhatsApp</h2>
+    <a
+      href="https://wa.me/8613760812861" 
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-green-600 font-medium hover:underline"
+    >
+      Chat on WhatsApp
+    </a>
+    <p className="text-gray-700 mt-2">+86 137 6081 2861</p>
+  </div>
+
+  {/* 🟢 WeChat */}
+  <div className="bg-gray-100 p-6 rounded-lg text-center shadow">
+    <h2 className="font-semibold text-lg mb-2">WeChat</h2>
+    {/* <p className="text-gray-700 mb-2">Scan to add</p> */}
+    <Image
+      src="https://sanityimages.s3.us-west-2.amazonaws.com/IMG_9423.jpeg" 
+      alt="WeChat QR"
+      width={120}
+      height={40}
+      priority   // optional: ensures above-the-fold images load faster
+      className="h-25 w-auto"
+    />
+  </div>
+</div>
+
 
       {/* Map Image */}
       <div className="relative w-full h-64 rounded-lg overflow-hidden">

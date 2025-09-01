@@ -7,6 +7,10 @@ import Link from "next/link";
 
 const PAGE_SIZE = 12; // items per page
 
+// 🟢 Revalidate every 7 day
+export const revalidate = 604800
+
+
 export default async function Home({
   searchParams,
 }: {

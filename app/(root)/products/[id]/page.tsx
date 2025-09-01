@@ -20,6 +20,10 @@ const md = markdownit();
 
 export const experimental_ppr = true;
 
+// 🟢 Revalidate every 7 day
+export const revalidate = 604800
+
+
 const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
   const id = (await params).id;
 
