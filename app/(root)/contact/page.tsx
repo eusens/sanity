@@ -60,7 +60,7 @@ export default function ContactPage() {
   {/* Visit */}
   <div className="bg-gray-100 p-6 rounded-lg text-center shadow">
     <MapPin className="w-8 h-8 mx-auto mb-3 text-blue-600" />
-    <h2 className="font-semibold text-lg mb-2">Visit Us</h2>
+    <h2 className="font-semibold text-lg mb-2">Address</h2>
     <p className="text-gray-700">2304,building 4,93# XingHai Rd</p>
     <p className="text-gray-700">Guangzhou, China</p>
   </div>
